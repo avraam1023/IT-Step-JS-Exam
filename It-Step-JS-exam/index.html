@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/guess-number.css" />
+    <link rel="stylesheet" href="style/hangman.css" />
+    <title>JS Exam</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <!--კალკულატორი-->
+      <h1 style="margin-bottom: 30px">კალკულატორი</h1>
+      <div class="calculator">
+        <input type="number" class="first-number" /><br />
+        <input type="number" class="second-number" />
+        <div>
+          <button class="button" onclick="calculate('+')">+</button>
+          <button class="button" onclick="calculate('-')">-</button>
+          <button class="button" onclick="calculate('*')">*</button>
+          <button class="button" onclick="calculate('/')">/</button>
+        </div>
+        <div>
+          <button class="button" onclick="calculate('%')">%</button>
+          <button class="button" onclick="calculate('log')">Log</button>
+          <button class="button" onclick="calculate('sqr')">
+            X<sup>2</sup>
+          </button>
+          <button class="button" onclick="calculate('sqrt')">√</button>
+        </div>
+        <p class="result"></p>
+        <button class="historyButton" onclick="historyButton()">History</button>
+        <button class="clearButton" onclick="clean()">Clean</button>
+        <div class="history-container"></div>
+      </div>
+    </div>
+
+    <!--გამოიცანი რიცხვი-->
+    <div class="main-container">
+      <h1 style="margin-bottom: 30px">გამოიცანი რიცხვი</h1>
+      <div class="guess">
+        <input type="number" class="from-value" placeholder="საიდან" />
+        <input type="number" class="to-value" placeholder="სადამდე" />
+        <button onclick="random()" class="generate">Generate</button>
+        <br />
+        <input
+          type="number"
+          class="guess-values"
+          placeholder="გამოსაცნობი რიცხვი"
+        />
+        <button onclick="check()" class="check">Check</button>
+        <p class="output"></p>
+        <p class="score"></p>
+        <button class="reset" onclick="reset()">Reset</button>
+      </div>
+    </div>
+
+    <!--Hangman-->
+    <div class="main-container">
+      <h1 style="margin-bottom: 30px">Hangman</h1>
+      <div class="hangman">
+        <input type="text" class="save" />
+        <button onclick="saveValue()">Save</button>
+        <p class="word"></p>
+        <br />
+        <button onclick="generateWord()">Generate</button><br />
+        <input type="text" class="word-value" /><br />
+        <button onclick="checkLetter()">Check</button>
+        <p class="resultParagraph" style="color: green"></p>
+        <button class="deleteButton" onclick="tryAgain()">Try Again</button>
+      </div>
+    </div>
+
+    <script src="script/calculator.js"></script>
+    <script src="script/guess-number.js"></script>
+    <script src="script/hangman.js"></script>
+  </body>
+</html>
